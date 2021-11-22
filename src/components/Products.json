@@ -1,0 +1,343 @@
+
+[
+    {
+        "name": '',
+        "adress": '',
+        "city": '',
+        "state": '',
+        "phoneNumber": 0,
+        "email": '',
+        "products":[
+                {
+                    "name": "Shirt",
+                    "category": "Shirts",
+                    "image": "https://drive.google.com/file/d/1atouBK2QwZHMCbKfiF_XtKu2SXaKpgVa/view?usp=sharing",
+                    "price": 169,
+                    "brand": "KING & JOE",
+                    "quantity": 5,
+                    "totalProduct": 0
+                }
+            ],
+        "totalBuy": 0,
+    },
+    {
+        "name": '',
+        "adress": '',
+        "city": '',
+        "state": '',
+        "phoneNumber": 0,
+        "email": '',
+        "products":[
+                {
+                    "name": "Slim Shirt",
+                    "category": "Shirts",
+                    "image": "https://drive.google.com/file/d/1BZ01kHCRlNKfGrHPkIPKZSk8wXUysVPr/view",
+                    "price": 169,
+                    "brand": "PACO",
+                    "quantity": 5,
+                    "totalProduct": 0
+                }
+            ],
+        "totalBuy": 0,
+    },
+    {
+        "name": '',
+        "adress": '',
+        "city": '',
+        "state": '',
+        "phoneNumber": 0,
+        "email": '',
+        "products":[
+                {
+                    "name": "Shirt",
+                    "category": "Shirts",
+                    "image": "https://drive.google.com/file/d/1t4hqIWx5gUmolUiABVsSqhWjUxoIhWsE/view?usp=sharing",
+                    "price": 179,
+                    "brand": "VON DER VOLKE",
+                    "quantity": 5,
+                    "totalProduct": 0
+                }
+            ],
+        "totalBuy": 0,
+    },
+    {
+        "name": '',
+        "adress": '',
+        "city": '',
+        "state": '',
+        "phoneNumber": 0,
+        "email": '',
+        "products":[
+                {
+                    "name": "Short",
+                    "category": "Shorts",
+                    "image": "https://drive.google.com/file/d/1U8ljQblqDh-8lx-nvwskHHBGiuEOH9cA/view?usp=sharing",
+                    "price": 259,
+                    "brand": "PACO",
+                    "quantity": 5,
+                    "totalProduct": 0
+                }
+            ],
+        "totalBuy": 0,
+    },
+    {
+        "name": '',
+        "adress": '',
+        "city": '',
+        "state": '',
+        "phoneNumber": 0,
+        "email": '',
+        "products":[
+                {
+                    "name": "Short",
+                    "category": "Shorts",
+                    "image": "https://drive.google.com/file/d/1_mGWjKQ8TmVY_mCrD2yZSh5lyTeNOlIQ/view?usp=sharing",
+                    "price": 279,
+                    "brand": "KING & JOE",
+                    "quantity": 5,
+                    "totalProduct": 0
+                }
+            ],
+        "totalBuy": 0,
+    },
+    {
+        "name": '',
+        "adress": '',
+        "city": '',
+        "state": '',
+        "phoneNumber": 0,
+        "email": '',
+        "products":[
+                {
+                    "name": "Short",
+                    "category": "Shorts",
+                    "image": "https://drive.google.com/file/d/1eHBkt8OP8VCL1VEBPGZYTPUxeUnzlfCJ/view?usp=sharing",
+                    "price": 279,
+                    "brand": "KING & JOE",
+                    "quantity": 5,
+                    "totalProduct": 0
+                }
+            ],
+        "totalBuy": 0,
+    },
+    {
+        "name": '',
+        "adress": '',
+        "city": '',
+        "state": '',
+        "phoneNumber": 0,
+        "email": '',
+        "products":[
+                {
+                    "name": "Pants",
+                    "category": "Pants",
+                    "image": "https://drive.google.com/file/d/17sA03zfGeeino9P0LcnY5OjY-XdSXjKt/view?usp=sharing",
+                    "price": 359,
+                    "brand": "KING & JOE",
+                    "quantity": 5,
+                    "totalProduct": 0
+                }
+            ],
+        "totalBuy": 0,
+    },
+    {
+        "name": '',
+        "adress": '',
+        "city": '',
+        "state": '',
+        "phoneNumber": 0,
+        "email": '',
+        "products":[
+                {
+                    "name": "Pants",
+                    "category": "Pants",
+                    "image": "https://drive.google.com/file/d/1URUo0Rl1ezY9ScdB8JYcQTDvkHlwfJh_/view?usp=sharing",
+                    "price": 339,
+                    "brand": "PACO",
+                    "quantity": 5,
+                    "totalProduct": 0
+                }
+            ],
+        "totalBuy": 0,
+    },
+    {
+        "name": '',
+        "adress": '',
+        "city": '',
+        "state": '',
+        "phoneNumber": 0,
+        "email": '',
+        "products":[
+                {
+                    "name": "Pants",
+                    "category": "Pants",
+                    "image": "https://drive.google.com/file/d/1aXuJoMKAcuUHqXu9Q0NAtyu-MXwMQCrz/view?usp=sharing",
+                    "price": 329,
+                    "brand": "PACO",
+                    "quantity": 5,
+                    "totalProduct": 0
+                }
+            ],
+        "totalBuy": 0,
+    },
+    {
+        "name": '',
+        "adress": '',
+        "city": '',
+        "state": '',
+        "phoneNumber": 0,
+        "email": '',
+        "products":[
+                {
+                    "name": "Kimono",
+                    "category": "Kimono",
+                    "image": "https://drive.google.com/file/d/1KkFhR5zHsGT6RckIRu_eNTKNTmI8jAd3/view?usp=sharing",
+                    "price": 229,
+                    "brand": "ONÇA PRETA",
+                    "quantity": 5,
+                    "totalProduct": 0
+                }
+            ],
+        "totalBuy": 0,
+    },
+    {
+        "name": '',
+        "adress": '',
+        "city": '',
+        "state": '',
+        "phoneNumber": 0,
+        "email": '',
+        "products":[
+                {
+                    "name": "Dress",
+                    "category": "Dress",
+                    "image": "https://drive.google.com/file/d/1RJ0OJCJLZYwmYzTUG2igK89VgQpY2emY/view?usp=sharing",
+                    "price": 399,
+                    "brand": "CARLOTA COSTA",
+                    "quantity": 5,
+                    "totalProduct": 0
+                }
+            ],
+        "totalBuy": 0,
+    },
+    {
+        "name": '',
+        "adress": '',
+        "city": '',
+        "state": '',
+        "phoneNumber": 0,
+        "email": '',
+        "products":[
+                {
+                    "name": "Dress",
+                    "category": "Dress",
+                    "image": "https://drive.google.com/file/d/1QOJz6lhFHHCk6YlX8jDlTp0LPvmfZscL/view?usp=sharing",
+                    "price": 529,
+                    "brand": "ARAMODU",
+                    "quantity": 5,
+                    "totalProduct": 0
+                }
+            ],
+        "totalBuy": 0,
+    },
+    {
+        "name": '',
+        "adress": '',
+        "city": '',
+        "state": '',
+        "phoneNumber": 0,
+        "email": '',
+        "products":[
+                {
+                    "name": "Dress",
+                    "category": "Dress",
+                    "image": "https://drive.google.com/file/d/1lxpsEdZl8f48XksOWpjczLUmlvlXPsdM/view?usp=sharing",
+                    "price": 459,
+                    "brand": "ARAMODU",
+                    "quantity": 5,
+                    "totalProduct": 0
+                }
+            ],
+        "totalBuy": 0,
+    },
+    {
+        "name": '',
+        "adress": '',
+        "city": '',
+        "state": '',
+        "phoneNumber": 0,
+        "email": '',
+        "products":[
+                {
+                    "name": "Dress",
+                    "category": "Dress",
+                    "image": "https://drive.google.com/file/d/11ukj8AUVIf8KFMtq2P9DfjbqzRk3wHdo/view?usp=sharing",
+                    "price": 429,
+                    "brand": "ONÇA PRETA",
+                    "quantity": 5,
+                    "totalProduct": 0
+                }
+            ],
+        "totalBuy": 0,
+    },
+    {
+        "name": '',
+        "adress": '',
+        "city": '',
+        "state": '',
+        "phoneNumber": 0,
+        "email": '',
+        "products":[
+                {
+                    "name": "Dress",
+                    "category": "Dress",
+                    "image": "https://drive.google.com/file/d/1ljRkV7HQewiBhwHtkNI8JPTS5fqunv0P/view?usp=sharing",
+                    "price": 429,
+                    "brand": "SMEL",
+                    "quantity": 5,
+                    "totalProduct": 0
+                }
+            ],
+        "totalBuy": 0,
+    },
+    {
+        "name": '',
+        "adress": '',
+        "city": '',
+        "state": '',
+        "phoneNumber": 0,
+        "email": '',
+        "products":[
+                {
+                    "name": "Dress",
+                    "category": "Dress",
+                    "image": "https://drive.google.com/file/d/1TZt0_CT6CPAvVBsasHacPXBvU_N3hlTG/view?usp=sharing",
+                    "price": 429,
+                    "brand": "CARLOTA COSTA",
+                    "quantity": 5,
+                    "totalProduct": 0
+                }
+            ],
+        "totalBuy": 0,
+    },
+    {
+        "name": '',
+        "adress": '',
+        "city": '',
+        "state": '',
+        "phoneNumber": 0,
+        "email": '',
+        "products":[
+                {
+                    "name": "Dress",
+                    "category": "Dress",
+                    "image": "https://drive.google.com/file/d/1JmyGb1ifZisAUXK94buXSf3EuHmRsAIL/view?usp=sharing",
+                    "price": 529,
+                    "brand": "GATA BAKANA",
+                    "quantity": 5,
+                    "totalProduct": 0
+                }
+            ],
+        "totalBuy": 0,
+    }
+]
