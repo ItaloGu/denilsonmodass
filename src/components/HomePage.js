@@ -2,13 +2,12 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
 
+
 import Galery from "./Galery";
-import NavBar from "./NavBar";
 export default function HomePage() {
   const [categories, setCategories] = useState("Categories");
   const [products, setProducts] = useState({});
   const [isLoading, setIsLoading] = useState(true);
-
 
   function handleChange(event) {
     setCategories(event.target.value);
@@ -32,11 +31,9 @@ export default function HomePage() {
     Products();
   }, []);
 
-
   return (
     <div>
       <div className="d-flex flex-column align-items-center">
-        <NavBar />
         <div className="d-flex flex-row align-items-center mb-4">
           <select
             className="form-select"
@@ -59,10 +56,16 @@ export default function HomePage() {
         </div>
         <h2>Produtos</h2>
       </div>
-      <div className="container">
-        <div className="row">{isLoading ? (<div className="spinner-border text-warning" role="status">
-  <span className="visually-hidden">Loading...</span>
-</div>) : products.map((product) => <Galery key={product._id} {...product}/>)}</div>
+      <div className="container mb-5">
+        <div className="row">
+          {isLoading ? (
+            <div className="spinner-border text-warning" role="status">
+              <span className="visually-hidden">Loading...</span>
+            </div>
+          ) : (
+            products.map((product) => <Galery key={product._id} {...product} />)
+          )}
+        </div>
       </div>
     </div>
   );
