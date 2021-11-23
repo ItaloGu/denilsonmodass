@@ -6,12 +6,12 @@ export default function OrdersListDetail() {
         <thead>
           <th>Produtos</th>
           <th>Quantidade</th>
-          <th>Valor Produtos</th>
+          <th>Tamanho</th>
           <th>Valor Total</th>
         </thead>
         <tbody>
           <tr>
-            <td>Camisa</td>
+            <td>Camisa P</td>
             <td>1</td>
             <td>R$ 999,99</td>
             <td></td>
