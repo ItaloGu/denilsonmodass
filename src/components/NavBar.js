@@ -9,7 +9,7 @@ export default function NavBar(){
         <img
           src={LogoDM}
           alt="denilsonModas"
-          style={{ width: "60vw", height: "auto" }}
+          style={{ width: "30vw", height: "auto" }}
         />
         <i className="fas fa-shopping-cart fa-2x"></i>
       </div>
