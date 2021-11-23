@@ -14,6 +14,7 @@ export default function UpdateProducts() {
   const { id } = useParams();
   const navigate = useNavigate();
 
+
   useEffect(() => {
     async function fetchProducts() {
       setIsSending(true);
@@ -21,7 +22,8 @@ export default function UpdateProducts() {
         const response = await axios.get(
           `https://ironrest.herokuapp.com/denilsonmodass/${id}`
         );
-        setFormData([...response.data]);
+        delete response.data._id;
+        setFormData({...response.data});
         setIsSending(false);
       } catch (err) {
         console.error(err);
@@ -33,7 +35,9 @@ export default function UpdateProducts() {
   }, [id]);
 
   function handleChange(event) {
-    setFormData({ ...formData, [event.target.name]: event.target.value });
+    if(!isSending){
+      setFormData({ ...formData, [event.target.name]: event.target.value });
+    }
   }
 
   function handleSubmit(event) {
@@ -54,13 +58,13 @@ export default function UpdateProducts() {
       }
     }
 
-    updateProduct()
+    updateProduct(id)
   }
 
   return (<div>
   <form onSubmit={handleSubmit}>
       <div className="">
-          <label HtmlFor="product">Nome do produto</label>
+          <label htmlFor="product">Nome do produto</label>
           <input
           id="product"
           value={formData.name}
@@ -70,7 +74,7 @@ export default function UpdateProducts() {
           />
       </div>
       <div className="">
-          <label HtmlFor="category">Categoria</label>
+          <label htmlFor="category">Categoria</label>
           <select
           id="category"
           value={formData.category}
@@ -87,7 +91,7 @@ export default function UpdateProducts() {
       </div>
 
       <div>
-          <label HtmlFor="price">Valor</label>
+          <label htmlFor="price">Valor</label>
           <input 
           id="price"
           value={formData.price}
@@ -97,7 +101,7 @@ export default function UpdateProducts() {
       </div>
 
       <div>
-          <label HtmlFor="brand">Marca</label>
+          <label htmlFor="brand">Marca</label>
           <input
           id="brand"
           value={formData.brand}
@@ -108,7 +112,7 @@ export default function UpdateProducts() {
       </div>
 
       <div>
-          <label HtmlFor="image">URL da imagem do produto</label>
+          <label htmlFor="image">URL da imagem do produto</label>
               <textarea
               id="image"
               name="image"
