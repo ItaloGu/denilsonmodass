@@ -9,7 +9,6 @@ export default function Galery(props) {
           <img src={props.image} className="card-img-top" alt={props.name} />
           <div className="card-body">
             <h5 className="card-title text-decoration-none" style={{color : "black", textDecoration: "none"}}>{props.name}</h5>
-
             <p className="card-text text-muted text-decoration-none">
               <small>{props.brand}</small>
             </p>
