@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
 
+
 import Galery from "./Galery";
 export default function HomePage() {
   const [categories, setCategories] = useState("Categories");
@@ -45,7 +46,9 @@ export default function HomePage() {
             <option value="Categorias">Categorias</option>
             <option value="Camisa">Camisa</option>
             <option value="Calça">Calça</option>
-            <option value="Regata">Regata</option>
+            <option value="Vestido">Vestido</option>
+            <option value="Kimono">Kimono</option>
+            <option value="Bermudas">Bermudas</option>
           </select>
           <button type="button" className="btn btn-outline-secondary">
             Filtrar
@@ -53,7 +56,7 @@ export default function HomePage() {
         </div>
         <h2>Produtos</h2>
       </div>
-      <div className="container">
+      <div className="container mb-5">
         <div className="row">
           {isLoading ? (
             <div className="spinner-border text-warning" role="status">
