@@ -1,6 +1,21 @@
 import { Link } from "react-router-dom";
+import axios from "axios";
+
 
 export default function Galery(props) {
+
+  // função de deletar 
+  async function handleDelete(id){
+    
+    try {
+      await axios.delete(`https://ironrest.herokuapp.com/denilsonmodass/${id}`);
+      window.location.reload();
+   } catch(err){
+      console.error(err.response.data)
+   }
+  }
+  
+  
   return (
     <>
       
@@ -24,7 +39,15 @@ export default function Galery(props) {
             </p>
           </div>
           </Link>
+          <i className="fas fa-pen"></i>
+          <button type="button" onClick={() => {handleDelete(props._id)}}>
+            <i  
+            className="far fa-trash-alt" 
+            >
+            </i>
+          </button>
         </div>
+        
       
     </>
   );
