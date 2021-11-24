@@ -6,7 +6,7 @@ export default function NavBar() {
       className="d-flex flex-row justify-content-between align-items-start align-self-center p-2"
       style={{ width: "98vw", height: "auto" }}
     >
-      <Link to="/order-list">
+      <Link to="/purchase-list">
         <i className="fas fa-bars fa-2x" style={{ color: "black" }}></i>
       </Link>
       <Link to="/">
