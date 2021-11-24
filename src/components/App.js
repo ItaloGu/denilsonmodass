@@ -3,24 +3,60 @@ import HomePage from "./HomePage";
 import { Routes, Route } from "react-router-dom";
 import ProductDetail from "./ProductDetail";
 import AddProduct from "./AddProduct";
+import { useState } from "react";
 
 import NavBar from "./NavBar";
-import OrdersList from "./OrdersList";
-import OrdersListDetail from "./OrdersListDetail";
+import PurchaseList from "./PurchaseList";
+import PurchaseListDetail from "./PurchaseListDetail";
 import UpdateProducts from "./UpdateProducts";
 
 function App() {
+  const [cartProducts, setCartProducts] = useState({
+    userName: "",
+    name: "",
+    image: "",
+    size: "",
+    price: "",
+    brand: "",
+    quantity: 0,
+    totalPrice: 0,
+  });
+
   return (
     <div>
       <NavBar />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/productDetail" element={<ProductDetail />} />
-        <Route path="/shopping-cart" element={<ShoppingCart />} />
+        <Route
+          path="/shopping-cart"
+          element={
+            <ShoppingCart
+            cartProducts={cartProducts}
+              setCartProducts={setCartProducts}
+            />
+          }
+        />
         <Route path="/add-product" element={<AddProduct />} />
-        <Route path="/products/:id" element={<ProductDetail />} />
-        <Route path="/orders-list" element={<OrdersList />} />
-        <Route path="/order-list/:id" element={<OrdersListDetail />} />
+        <Route
+          path="/products/:id"
+          element={
+            <ProductDetail
+              cartProducts={cartProducts}
+              setCartProducts={setCartProducts}
+            />
+          }
+        />
+        <Route path="/purchase-list" element={<PurchaseList />} />
+        <Route
+          path="/purchase-list/:id"
+          element={
+            <PurchaseListDetail
+              cartProducts={cartProducts}
+              setCartProducts={setCartProducts}
+            />
+          }
+        />
         <Route path="/update-products/:id" element={<UpdateProducts />} />
       </Routes>
     </div>

@@ -1,25 +1,51 @@
-import example from "../images/logos/Favicon 01.png";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
-export default function ShoppingCartItens() {
+export default function ShoppingCartItens(props) {
+  const navigate = useNavigate();
+  function handleChange(event) {
+    props.setCartProducts({
+      ...props.cartProducts,
+      [event.target.name]: event.target.value,
+      totalPrice: props.cartProducts.price * props.cartProducts.quantity,
+    });
+  }
+
+  async function handleSubmit(event) {
+    event.preventDefault();
+
+    try {
+      await axios.post(
+        "https://ironrest.herokuapp.com/denilsonmodassOrders",
+        props.cartProducts
+      );
+      navigate("/");
+    } catch (error) {
+      console.error(error.response.data);
+    }
+  }
+
   return (
     <div className="d-flex flex-column align-items-end">
       <table className="border text-center">
         <thead>
-          <th className="border" style={{ width: "60vw" }}>
-            Produtos
-          </th>
-          <th className="border" style={{ width: "10vw" }}>
-            Preços
-          </th>
-          <th className="border" style={{ width: "10vw" }}>
-            Quantidade
-          </th>
-          <th className="border" style={{ width: "10vw" }}>
-            Total Parcial
-          </th>
-          <th className="border" style={{ width: "10vw" }}>
-            Total
-          </th>
+          <tr>
+            <th className="border" style={{ width: "60vw" }}>
+              Produtos
+            </th>
+            <th className="border" style={{ width: "10vw" }}>
+              Preços
+            </th>
+            <th className="border" style={{ width: "10vw" }}>
+              Quantidade
+            </th>
+            <th className="border" style={{ width: "10vw" }}>
+              Tamanho
+            </th>
+            <th className="border" style={{ width: "10vw" }}>
+              Total
+            </th>
+          </tr>
         </thead>
 
         <tbody className="border">
@@ -29,21 +55,28 @@ export default function ShoppingCartItens() {
                 <div className="row g-0">
                   <div className="col-md-4">
                     <img
-                      src={example}
+                      src={props.cartProducts.image}
                       className="img-fluid rounded-start"
-                      alt="example"
+                      alt={props.cartProducts.name}
                     />
                   </div>
-                  <div class="col-md-8">
-                    <div className="card-body mt-5">
-                      <h5 className="card-title">Nome da roupa</h5>
-                      <p className="card-text text-muted">marca</p>
+                  <div className="col-md-8">
+                    <div className="card-body mt-3">
+                      <h5 className="card-title">{props.cartProducts.name}</h5>
+                      <p className="card-text text-muted">
+                        {props.cartProducts.brand}
+                      </p>
                     </div>
                   </div>
                 </div>
               </div>
             </td>
-            <td className="border">R$ 999,99</td>
+            <td className="border">
+              {props.cartProducts.price.toLocaleString("pt-BR", {
+                style: "currency",
+                currency: "BRL",
+              })}
+            </td>
             <td className="border">
               <input
                 type="number"
@@ -51,20 +84,47 @@ export default function ShoppingCartItens() {
                 name="quantity"
                 min="1"
                 style={{ width: "5vw" }}
+                value={props.cartProducts.quantity}
+                onChange={handleChange}
               />
             </td>
-            <td className="border">R$ 999,99</td>
+            <td className="border">
+              <p>{props.cartProducts.size}</p>
+            </td>
           </tr>
           <tr>
             <td className="border"></td>
             <td className="border"></td>
             <td className="border"></td>
             <td className="border"></td>
-            <td className="border">R$ 999,99</td>
+            <td className="border">
+              {(
+                props.cartProducts.price * props.cartProducts.quantity
+              ).toLocaleString("pt-BR", {
+                style: "currency",
+                currency: "BRL",
+              })}
+            </td>
           </tr>
         </tbody>
       </table>
-      <button type="submit" className="btn btn-outline-secondary">
+      <form>
+        <div className="">
+          <label HtmlFor="userNameImput">Nome completo</label>
+          <input
+            id="userNameImput"
+            value={props.cartProducts.userName}
+            type="text"
+            onChange={handleChange}
+            name="userName"
+          />
+        </div>
+      </form>
+      <button
+        type="submit"
+        className="btn btn-outline-secondary"
+        onClick={handleSubmit}
+      >
         Finalizar compra
       </button>
     </div>
