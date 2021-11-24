@@ -3,7 +3,7 @@ import axios from "axios";
 
 export default function Galery(props) {
   const navigate = useNavigate();
-  // função de deletar
+  
   async function handleDelete(id) {
     try {
       await axios.delete(`https://ironrest.herokuapp.com/denilsonmodass/${id}`);

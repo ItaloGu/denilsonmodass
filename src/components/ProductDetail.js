@@ -71,7 +71,7 @@ export default function ProductDetail(props) {
             <div className="col-sm-8" style={{ width: "40vw" }}>
               <img src={product.image} className="card-img-top" alt="example" />
             </div>
-            <form className="col-sm-4">
+            <form className="col-sm-4 mt-5">
               <h5>{product.name}</h5>
               <strong>
                 {product.price.toLocaleString("pt-BR", {
