@@ -37,7 +37,10 @@ export default function PurchaseList() {
           ) : (
             purchase.map((currentPurchase) => {
               return (
-                <Link to={`/purchase-list/${currentPurchase._id}`}>
+                <Link
+                  key={currentPurchase._id}
+                  to={`/purchase-list/${currentPurchase._id}`}
+                >
                   <li>
                     Nome do Cliente: {currentPurchase.userName} || Valor da
                     compra: R${currentPurchase.totalPrice},00

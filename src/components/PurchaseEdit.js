@@ -1,13 +1,13 @@
+import { useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 
-export default function PurchaseListDetail() {
-  const navigate = useNavigate();
+export default function PurchaseEdit() {
   const { id } = useParams();
+  const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(true);
-  const [purchase, setPurchase] = useState({
-    _id: "",
+  const [isSending, setIsSending] = useState(false);
+  const [updatePurchase, setupdatePurchase] = useState({
     userName: "",
     name: "",
     image: "",
@@ -19,13 +19,14 @@ export default function PurchaseListDetail() {
   });
 
   useEffect(() => {
-    async function Products() {
+    async function Purchase() {
       try {
         setIsLoading(true);
         const purchaseList = await axios.get(
           `https://ironrest.herokuapp.com/denilsonmodassOrders/${id}`
         );
-        setPurchase({ ...purchaseList.data });
+        delete purchaseList.data._id;
+        setupdatePurchase({ ...purchaseList.data });
         setIsLoading(false);
       } catch (err) {
         console.log(err);
@@ -33,34 +34,51 @@ export default function PurchaseListDetail() {
       }
     }
 
-    Products();
+    Purchase();
   }, [id]);
 
-  async function handleDelete(id) {
-    try {
-      await axios.delete(
-        `https://ironrest.herokuapp.com/denilsonmodassOrders/${id}`
-      );
-      navigate("/purchase-list");
-    } catch (err) {
-      console.error(err.response.data);
+  function handleChange(event) {
+    setupdatePurchase({
+      ...updatePurchase,
+      [event.target.name]: event.target.value,
+      totalPrice: updatePurchase.price * updatePurchase.quantity,
+    });
+  }
+  function handleSubmit(event) {
+    event.preventDefault();
+
+    async function updateProduct(id) {
+      try {
+        await axios.put(
+          `https://ironrest.herokuapp.com/denilsonmodassOrders/${id}`,
+          updatePurchase
+        );
+        setIsSending(false);
+        alert("Successfully updated!");
+        navigate("/purchase-list");
+      } catch (err) {
+        console.log(err);
+        setIsSending(false);
+      }
     }
+
+    updateProduct(id);
   }
 
   return (
-    <>
+    <div>
+      <h1>Pagina de Edição</h1>
       {isLoading ? (
         <div className="spinner-border text-warning" role="status">
           <span className="visually-hidden">Loading...</span>
         </div>
       ) : (
-        <div className="m-4">
-          <h1>{purchase.userName}</h1>
-          <table className="border text-center">
+        <div className="d-flex flex-column align-items-end">
+          <table className="border text-center mb-2">
             <thead>
               <tr>
                 <th className="border" style={{ width: "60vw" }}>
-                  Produto
+                  Produtos
                 </th>
                 <th className="border" style={{ width: "10vw" }}>
                   Preços
@@ -84,16 +102,16 @@ export default function PurchaseListDetail() {
                     <div className="row g-0">
                       <div className="col-md-4">
                         <img
-                          src={purchase.image}
+                          src={updatePurchase.image}
                           className="img-fluid rounded-start"
-                          alt={purchase.name}
+                          alt={updatePurchase.name}
                         />
                       </div>
                       <div className="col-md-8">
                         <div className="card-body mt-3">
-                          <h5 className="card-title">{purchase.name}</h5>
+                          <h5 className="card-title">{updatePurchase.name}</h5>
                           <p className="card-text text-muted">
-                            {purchase.brand}
+                            {updatePurchase.brand}
                           </p>
                         </div>
                       </div>
@@ -101,16 +119,24 @@ export default function PurchaseListDetail() {
                   </div>
                 </td>
                 <td className="border">
-                  {purchase.price.toLocaleString("pt-BR", {
+                  {updatePurchase.price.toLocaleString("pt-BR", {
                     style: "currency",
                     currency: "BRL",
                   })}
                 </td>
                 <td className="border">
-                  <p>{purchase.quantity}</p>
+                  <input
+                    type="number"
+                    id="quantity"
+                    name="quantity"
+                    min="1"
+                    style={{ width: "5vw" }}
+                    value={updatePurchase.quantity}
+                    onChange={handleChange}
+                  />
                 </td>
                 <td className="border">
-                  <p>{purchase.size}</p>
+                  <p>{updatePurchase.size}</p>
                 </td>
               </tr>
               <tr>
@@ -119,7 +145,9 @@ export default function PurchaseListDetail() {
                 <td className="border"></td>
                 <td className="border"></td>
                 <td className="border">
-                  {purchase.totalPrice.toLocaleString("pt-BR", {
+                  {(
+                    updatePurchase.price * updatePurchase.quantity
+                  ).toLocaleString("pt-BR", {
                     style: "currency",
                     currency: "BRL",
                   })}
@@ -127,26 +155,35 @@ export default function PurchaseListDetail() {
               </tr>
             </tbody>
           </table>
+          <form>
+            <div className="mb-2">
+              <label HtmlFor="userNameImput">Nome completo: </label>
+              <input
+                id="userNameImput"
+                value={updatePurchase.userName}
+                type="text"
+                onChange={handleChange}
+                name="userName"
+              />
+            </div>
+          </form>
           <button
-            type="button"
-            onClick={() => {
-              navigate(`/purchase-edit/${id}`);
-            }}
-            className="btn btn-outline-secondary mt-2"
+            type="submit"
+            className="btn btn-outline-secondary"
+            onClick={handleSubmit}
           >
-            Editar
-          </button>
-          <button
-            type="button"
-            className="btn btn-outline-secondary mt-2"
-            onClick={() => {
-              handleDelete(id);
-            }}
-          >
-            Apagar
+            {" "}
+            {isSending ? (
+              <span
+                className="spinner-border spinner-border-sm me-2"
+                role="status"
+                aria-hidden="true"
+              ></span>
+            ) : null}
+            Finalizar edição
           </button>
         </div>
       )}
-    </>
+    </div>
   );
 }

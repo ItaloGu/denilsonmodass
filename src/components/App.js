@@ -9,6 +9,7 @@ import NavBar from "./NavBar";
 import PurchaseList from "./PurchaseList";
 import PurchaseListDetail from "./PurchaseListDetail";
 import UpdateProducts from "./UpdateProducts";
+import PurchaseEdit from "./PurchaseEdit";
 
 function App() {
   const [cartProducts, setCartProducts] = useState({
@@ -32,7 +33,7 @@ function App() {
           path="/shopping-cart"
           element={
             <ShoppingCart
-            cartProducts={cartProducts}
+              cartProducts={cartProducts}
               setCartProducts={setCartProducts}
             />
           }
@@ -58,6 +59,7 @@ function App() {
           }
         />
         <Route path="/update-products/:id" element={<UpdateProducts />} />
+        <Route path="/purchase-edit/:id" element={<PurchaseEdit />} />
       </Routes>
     </div>
   );
