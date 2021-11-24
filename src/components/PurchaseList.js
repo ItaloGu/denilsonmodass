@@ -24,7 +24,7 @@ export default function PurchaseList() {
     Purchases();
   }, []);
 
-  console.log(purchase);
+
   return (
     <div>
       <h1>Lista de pedidos</h1>
