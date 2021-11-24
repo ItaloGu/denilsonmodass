@@ -1,7 +1,7 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
-
+import '../Style/addProduct.css'
 export default function UpdateProducts() {
   const [formData, setFormData] = useState({
     name: "",
@@ -61,9 +61,9 @@ export default function UpdateProducts() {
   }
 
   return (
-    <div>
+    <div className='inputs'>
       <form onSubmit={handleSubmit}>
-        <div className="">
+        <div className="labelInput">
           <label htmlFor="product">Nome do produto</label>
           <input
             id="product"
@@ -73,7 +73,7 @@ export default function UpdateProducts() {
             name="name"
           />
         </div>
-        <div className="">
+        <div className="labelInput">
           <label htmlFor="category">Categoria</label>
           <select
             id="category"
@@ -90,7 +90,7 @@ export default function UpdateProducts() {
           </select>
         </div>
 
-        <div>
+        <div className="labelInput">
           <label htmlFor="price">Valor</label>
           <input
             id="price"
@@ -101,7 +101,7 @@ export default function UpdateProducts() {
           />
         </div>
 
-        <div>
+        <div className='labelInput'>
           <label htmlFor="brand">Marca</label>
           <input
             id="brand"
@@ -112,7 +112,7 @@ export default function UpdateProducts() {
           />
         </div>
 
-        <div>
+        <div className="labelInput">
           <label htmlFor="image">URL da imagem do produto</label>
           <textarea
             id="image"
@@ -123,11 +123,11 @@ export default function UpdateProducts() {
           ></textarea>
         </div>
 
-        <div className="mt-3 text-end">
+        <div className="labelInput-button">
           <button
             disabled={isSending}
             type="submit"
-            className="btn btn-primary"
+            className="btn"
           >
             {isSending ? (
               <span
