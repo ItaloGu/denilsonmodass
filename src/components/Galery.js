@@ -1,7 +1,8 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 export default function Galery(props) {
+  const navigate = useNavigate();
   // função de deletar
   async function handleDelete(id) {
     try {
@@ -39,8 +40,17 @@ export default function Galery(props) {
               </strong>
             </p>
           </div>
+          
         </Link>
-        <i className="fas fa-pen"></i>
+        <div className="NavIcon">
+        <button
+        
+          type="button"
+          onClick={() => {
+            navigate(`/update-products/${props._id}`);
+          }}
+        >
+        <i className="fas fa-pen"></i></button>
         <button
           type="button"
           onClick={() => {
@@ -49,6 +59,7 @@ export default function Galery(props) {
         >
           <i className="far fa-trash-alt"></i>
         </button>
+        </div>
       </div>
     </>
   );
