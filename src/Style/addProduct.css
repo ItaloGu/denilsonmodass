@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300&family=Signika:wght@300&display=swap');
+
+.inputs {
+    font-family: 'Montserrat', sans-serif;
+    color: black;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.labelInput {
+    display: flex;
+    flex-direction: column;
+    margin: 15px 60px;
+}
+.labelInput input, select, textarea {
+    border-radius: 15px;
+    border: 1px solid black;
+    margin-top: 5px;
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    width: 9%;
+    text-align: center;
+    border-radius: 15px;
+    border: 1px solid #F3B860; 
+    background-color: #F3B860;
+    color: black;
+    font-weight: bold;
+}
+
+.labelInput-button {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 60px;
+    margin-bottom: 60px;
+    
+}
