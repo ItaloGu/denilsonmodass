@@ -14,7 +14,6 @@ export default function UpdateProducts() {
   const { id } = useParams();
   const navigate = useNavigate();
 
-
   useEffect(() => {
     async function fetchProducts() {
       setIsSending(true);
@@ -23,7 +22,7 @@ export default function UpdateProducts() {
           `https://ironrest.herokuapp.com/denilsonmodass/${id}`
         );
         delete response.data._id;
-        setFormData({...response.data});
+        setFormData({ ...response.data });
         setIsSending(false);
       } catch (err) {
         console.error(err);
@@ -35,7 +34,7 @@ export default function UpdateProducts() {
   }, [id]);
 
   function handleChange(event) {
-    if(!isSending){
+    if (!isSending) {
       setFormData({ ...formData, [event.target.name]: event.target.value });
     }
   }
@@ -58,90 +57,89 @@ export default function UpdateProducts() {
       }
     }
 
-    updateProduct(id)
+    updateProduct(id);
   }
 
-  return (<div>
-  <form onSubmit={handleSubmit}>
-      <div className="">
+  return (
+    <div>
+      <form onSubmit={handleSubmit}>
+        <div className="">
           <label htmlFor="product">Nome do produto</label>
           <input
-          id="product"
-          value={formData.name}
-          type="text"
-          onChange={handleChange}
-          name="name"
+            id="product"
+            value={formData.name}
+            type="text"
+            onChange={handleChange}
+            name="name"
           />
-      </div>
-      <div className="">
+        </div>
+        <div className="">
           <label htmlFor="category">Categoria</label>
           <select
-          id="category"
-          value={formData.category}
-          type="text"
-          onChange={handleChange}
-          name="category"
+            id="category"
+            value={formData.category}
+            type="text"
+            onChange={handleChange}
+            name="category"
           >
-          <option value="Camisa">Camisa</option>
-          <option value="Bermuda">Bermuda</option>
-          <option value="Calça">Calça</option>
-          <option value="Vestido">Vestido</option>
-          <option value="Kimono">Kimono</option>
+            <option value="Camisa">Camisa</option>
+            <option value="Bermuda">Bermuda</option>
+            <option value="Calça">Calça</option>
+            <option value="Vestido">Vestido</option>
+            <option value="Kimono">Kimono</option>
           </select>
-      </div>
+        </div>
 
-      <div>
+        <div>
           <label htmlFor="price">Valor</label>
-          <input 
-          id="price"
-          value={formData.price}
-          type="number"
-          onChange={handleChange}
-          name="price"/> 
-      </div>
+          <input
+            id="price"
+            value={formData.price}
+            type="number"
+            onChange={handleChange}
+            name="price"
+          />
+        </div>
 
-      <div>
+        <div>
           <label htmlFor="brand">Marca</label>
           <input
-          id="brand"
-          value={formData.brand}
-          type="text"
-          onChange={handleChange}
-          name="brand"
+            id="brand"
+            value={formData.brand}
+            type="text"
+            onChange={handleChange}
+            name="brand"
           />
-      </div>
+        </div>
 
-      <div>
+        <div>
           <label htmlFor="image">URL da imagem do produto</label>
-              <textarea
-              id="image"
-              name="image"
-              value={formData.image}
-              type="text"
-              onChange={handleChange}
-              
-              ></textarea>
+          <textarea
+            id="image"
+            name="image"
+            value={formData.image}
+            type="text"
+            onChange={handleChange}
+          ></textarea>
+        </div>
 
-      </div>
-
-      <div className="mt-3 text-end">
-        <button
-          disabled={isSending}
-          type="submit"
-          className="btn btn-primary"
-        >
-          {isSending ? (
-            <span
-              className="spinner-border spinner-border-sm me-2"
-              role="status"
-              aria-hidden="true"
-            ></span>
-          ) : null}
-          Submit
-        </button>
-      </div>
-
-
-  </form>
-</div>);
+        <div className="mt-3 text-end">
+          <button
+            disabled={isSending}
+            type="submit"
+            className="btn btn-primary"
+          >
+            {isSending ? (
+              <span
+                className="spinner-border spinner-border-sm me-2"
+                role="status"
+                aria-hidden="true"
+              ></span>
+            ) : null}
+            Submit
+          </button>
+        </div>
+      </form>
+    </div>
+  );
 }

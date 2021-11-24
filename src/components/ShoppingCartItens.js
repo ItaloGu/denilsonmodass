@@ -27,7 +27,7 @@ export default function ShoppingCartItens(props) {
 
   return (
     <div className="d-flex flex-column align-items-end">
-      <table className="border text-center">
+      <table className="border text-center mb-2">
         <thead>
           <tr>
             <th className="border" style={{ width: "60vw" }}>
@@ -109,8 +109,8 @@ export default function ShoppingCartItens(props) {
         </tbody>
       </table>
       <form>
-        <div className="">
-          <label HtmlFor="userNameImput">Nome completo</label>
+        <div className="mb-2">
+          <label HtmlFor="userNameImput">Nome completo: </label>
           <input
             id="userNameImput"
             value={props.cartProducts.userName}

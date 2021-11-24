@@ -9,10 +9,10 @@ export default function NavBar() {
       >
         <div>
           <Link to="/purchase-list">
-          <i className="fas fa-bars fa-2x" style={{ color: "black" }}></i>
+            <i className="fas fa-bars fa-2x" style={{ color: "black" }}></i>
           </Link>
         </div>
-        
+
         <div className="d-flex align-items-center">
           <Link to="/add-product">
             <button className="buttonAdd flex-row">
@@ -28,14 +28,14 @@ export default function NavBar() {
         </div>
       </div>
       <div className="d-flex justify-content-center ">
-          <Link to="/">
-            <img
-              src={LogoDM}
-              alt="denilsonModas"
-              style={{ width: "30vw", height: "auto" }}
-            />
-          </Link>
-        </div>
+        <Link to="/">
+          <img
+            src={LogoDM}
+            alt="denilsonModas"
+            style={{ width: "30vw", height: "auto" }}
+          />
+        </Link>
+      </div>
     </div>
   );
 }
