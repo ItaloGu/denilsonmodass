@@ -117,6 +117,7 @@ export default function ShoppingCartItens(props) {
             type="text"
             onChange={handleChange}
             name="userName"
+            required
           />
         </div>
       </form>
