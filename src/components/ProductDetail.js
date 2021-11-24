@@ -58,7 +58,7 @@ export default function ProductDetail(props) {
     }
 
     Products();
-  }, [id, cartProduct]);
+  }, [id]);
 
   return (
     <div>
