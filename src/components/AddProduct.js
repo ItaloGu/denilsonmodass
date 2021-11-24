@@ -1,6 +1,7 @@
 import {useState} from "react"
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import '../Style/addProduct.css'
 
 function AddProduct() {
     const navigate = useNavigate();
@@ -8,7 +9,7 @@ function AddProduct() {
         name: "",
         category: "",
         image: "",
-        price: "",
+        price: 0,
         brand: ""
     });
 
@@ -31,9 +32,9 @@ function AddProduct() {
     }
 
     return (
-        <div>
-            <form>
-                <div className="">
+        <div className="inputs" >
+            <form >
+                <div className="labelInput">
                     <label HtmlFor="product">Nome do produto</label>
                     <input
                     id="product"
@@ -43,7 +44,7 @@ function AddProduct() {
                     name="name"
                     />
                 </div>
-                <div className="">
+                <div className="labelInput">
                     <label HtmlFor="category">Categoria</label>
                     <select
                     id="category"
@@ -60,7 +61,7 @@ function AddProduct() {
                     </select>
                 </div>
 
-                <div>
+                <div className="labelInput">
                     <label HtmlFor="price">Valor</label>
                     <input 
                     id="price"
@@ -70,7 +71,7 @@ function AddProduct() {
                     name="price"/> 
                 </div>
 
-                <div>
+                <div className="labelInput">
                     <label HtmlFor="brand">Marca</label>
                     <input
                     id="brand"
@@ -81,7 +82,7 @@ function AddProduct() {
                     />
                 </div>
 
-                <div>
+                <div className="labelInput">
                     <label HtmlFor="image">URL da imagem do produto</label>
                         <textarea
                         id="image"
@@ -94,8 +95,9 @@ function AddProduct() {
 
                 </div>
 
-                <div className="labelInput">
-                    <button 
+                <div className="labelInput-button">
+                    <button
+                    className="btn"
                     type="submit"
                     onClick={handleSubmit} >Enviar</button>
                 </div>
