@@ -7,6 +7,7 @@ export default function HomePage() {
   const [products, setProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [productsBkp, setProductsBkp] = useState([]);
+  
 
   useEffect(() => {
     async function Products() {
@@ -47,6 +48,9 @@ export default function HomePage() {
     }
   }
 
+  
+  
+
   return (
     <div>
       <div className="d-flex flex-column align-items-center">
@@ -76,7 +80,7 @@ export default function HomePage() {
               <span className="visually-hidden">Loading...</span>
             </div>
           ) : (
-            products.map((product) => <Galery key={product._id} {...product} />)
+            products.map((product) => <Galery key={product._id} {...product} /> )
           )}
         </div>
       </div>
