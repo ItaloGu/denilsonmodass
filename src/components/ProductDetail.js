@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
+import "../Style/NavBar.css"
 
 export default function ProductDetail(props) {
   const navigate = useNavigate();
@@ -87,6 +88,7 @@ export default function ProductDetail(props) {
                 id="quantidade"
                 onChange={handleChange}
                 value={cartProduct.quantity}
+                required
               >
                 <option value="0">Quantidade</option>
                 <option value="1">1</option>
@@ -103,6 +105,7 @@ export default function ProductDetail(props) {
                 onChange={handleChange}
                 value="P"
                 id="P"
+                required
               />
               <label className="form-check-label mt-2 ms-2" htmlFor="P">
                 P
@@ -114,6 +117,7 @@ export default function ProductDetail(props) {
                 name="size"
                 onChange={handleChange}
                 value="M"
+                required
               />
               <label className="form-check-label mt-2 ms-2" htmlFor="M">
                 M
@@ -126,18 +130,20 @@ export default function ProductDetail(props) {
                 onChange={handleChange}
                 value="G"
                 id="G"
+                required
               />
               <label className="form-check-label mt-2 ms-2" htmlFor="G">
                 G
               </label>
-
+                <div className="NavIcon">
               <button
                 type="button"
-                className="btn btn-secondary btn-sm ms-3"
+                className="btn"
                 onClick={handleClick}
-              >
-                Add ao carrinho
+              ><i className="fas fa-plus">
+                </i>
               </button>
+              </div>
             </form>
           </div>
         </div>
