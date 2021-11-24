@@ -1,4 +1,4 @@
-import {useState} from "react"
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import '../Style/addProduct.css'
@@ -13,23 +13,26 @@ function AddProduct() {
         brand: ""
     });
 
-    function handleChange(event) {
-        setProduct({
-            ...product,
-            [event.target.name]: event.target.value,
-        });
-    }
+  function handleChange(event) {
+    setProduct({
+      ...product,
+      [event.target.name]: event.target.value,
+    });
+  }
 
-    async function handleSubmit(event){
-        event.preventDefault();
+  async function handleSubmit(event) {
+    event.preventDefault();
 
-        try{    
-            await axios.post("https://ironrest.herokuapp.com/denilsonmodass", product);
-            navigate("/");
-        } catch(error){
-            console.error(error.response.data);
-        }
+    try {
+      await axios.post(
+        "https://ironrest.herokuapp.com/denilsonmodass",
+        product
+      );
+      navigate("/");
+    } catch (error) {
+      console.error(error.response.data);
     }
+  }
 
     return (
         <div className="inputs" >
@@ -101,11 +104,8 @@ function AddProduct() {
                     type="submit"
                     onClick={handleSubmit} >Enviar</button>
                 </div>
-
-
-            </form>
-        </div>
-
-    );
+      </form>
+    </div>
+  );
 }
- export default AddProduct;
+export default AddProduct;

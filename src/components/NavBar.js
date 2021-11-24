@@ -11,7 +11,7 @@ export default function NavBar() {
       >
         <div>
           <Link to="/purchase-list">
-          <i className="fas fa-bars fa-2x" style={{ color: "black" }}></i>
+            <i className="fas fa-bars fa-2x" style={{ color: "black" }}></i>
           </Link>
         </div>
         
