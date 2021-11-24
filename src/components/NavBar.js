@@ -8,8 +8,8 @@ export default function NavBar() {
         style={{ width: "98vw", height: "auto" }}
       >
         <div>
-          <Link to="/order-list">
-            <i className="fas fa-bars fa-2x" style={{ color: "black" }}></i>
+          <Link to="/purchase-list">
+          <i className="fas fa-bars fa-2x" style={{ color: "black" }}></i>
           </Link>
         </div>
         

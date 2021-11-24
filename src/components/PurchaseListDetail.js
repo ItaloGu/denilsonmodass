@@ -1,4 +1,14 @@
-export default function OrdersListDetail() {
+
+
+
+
+
+export default function PurchaseListDetail() {
+
+
+
+
+
   return (
     <div>
       <h2>Client Name</h2>
