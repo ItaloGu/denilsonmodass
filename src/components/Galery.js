@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 
 export default function Galery(props) {
-  // função de deletar
+  
   async function handleDelete(id) {
     try {
       await axios.delete(`https://ironrest.herokuapp.com/denilsonmodass/${id}`);
