@@ -41,7 +41,7 @@ export default function PurchaseEdit() {
     setupdatePurchase({
       ...updatePurchase,
       [event.target.name]: event.target.value,
-      totalPrice: updatePurchase.price * updatePurchase.quantity,
+      totalPrice: parseInt(updatePurchase.price) * parseInt(updatePurchase.quantity),
     });
   }
   function handleSubmit(event) {
@@ -119,7 +119,7 @@ export default function PurchaseEdit() {
                   </div>
                 </td>
                 <td className="border">
-                  {updatePurchase.price.toLocaleString("pt-BR", {
+                  {parseInt(updatePurchase.price).toLocaleString("pt-BR", {
                     style: "currency",
                     currency: "BRL",
                   })}
@@ -146,7 +146,7 @@ export default function PurchaseEdit() {
                 <td className="border"></td>
                 <td className="border">
                   {(
-                    updatePurchase.price * updatePurchase.quantity
+                    parseInt(updatePurchase.price) * parseInt(updatePurchase.quantity)
                   ).toLocaleString("pt-BR", {
                     style: "currency",
                     currency: "BRL",

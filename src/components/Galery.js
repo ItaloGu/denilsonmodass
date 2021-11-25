@@ -33,7 +33,7 @@ export default function Galery(props) {
               style={{ color: "black", textDecoration: "none" }}
             >
               <strong>
-                {props.price.toLocaleString("pt-BR", {
+                {parseInt(props.price).toLocaleString("pt-BR", {
                   style: "currency",
                   currency: "BRL",
                 })}
