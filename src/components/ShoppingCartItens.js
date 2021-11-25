@@ -72,7 +72,7 @@ export default function ShoppingCartItens(props) {
               </div>
             </td>
             <td className="border">
-              {props.cartProducts.price.toLocaleString("pt-BR", {
+              {parseInt(props.cartProducts.price).toLocaleString("pt-BR", {
                 style: "currency",
                 currency: "BRL",
               })}
@@ -99,7 +99,7 @@ export default function ShoppingCartItens(props) {
             <td className="border"></td>
             <td className="border">
               {(
-                props.cartProducts.price * props.cartProducts.quantity
+                parseInt(props.cartProducts.price) * parseInt(props.cartProducts.quantity)
               ).toLocaleString("pt-BR", {
                 style: "currency",
                 currency: "BRL",

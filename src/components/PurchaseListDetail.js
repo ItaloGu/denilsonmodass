@@ -101,13 +101,13 @@ export default function PurchaseListDetail() {
                   </div>
                 </td>
                 <td className="border">
-                  {purchase.price.toLocaleString("pt-BR", {
+                  {parseInt(purchase.price).toLocaleString("pt-BR", {
                     style: "currency",
                     currency: "BRL",
                   })}
                 </td>
                 <td className="border">
-                  <p>{purchase.quantity}</p>
+                  <p>{parseInt(purchase.quantity)}</p>
                 </td>
                 <td className="border">
                   <p>{purchase.size}</p>
@@ -119,7 +119,7 @@ export default function PurchaseListDetail() {
                 <td className="border"></td>
                 <td className="border"></td>
                 <td className="border">
-                  {purchase.totalPrice.toLocaleString("pt-BR", {
+                  {parseInt(purchase.totalPrice).toLocaleString("pt-BR", {
                     style: "currency",
                     currency: "BRL",
                   })}

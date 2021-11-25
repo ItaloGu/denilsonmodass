@@ -75,7 +75,7 @@ export default function ProductDetail(props) {
             <form className="col-sm-4 mt-5">
               <h5>{product.name}</h5>
               <strong>
-                {product.price.toLocaleString("pt-BR", {
+                {parseInt(product.price).toLocaleString("pt-BR", {
                   style: "currency",
                   currency: "BRL",
                 })}
