@@ -1,6 +1,6 @@
 # Denilson Modas
 
-Este é um projeto do bootcamp Ironhack realizado em 7 dias com a finalidade de desenvolver o front-end de uma página com um banco de dados simuldo. O site que decidimos construir é a simulação de um e-comerce de roupas.
+Este é um projeto do bootcamp Ironhack realizado em 7 dias com a finalidade de desenvolver o front-end de uma página com um banco de dados simulado. O site que decidimos construir é a simulação de um e-comerce de roupas.
 
 ## Link para o deploy
 
