@@ -1,7 +1,10 @@
-# Getting Started with Create React App
+# Denilson Modas
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este é um projeto do bootcamp Ironhack realizado em 7 dias com a finalidade de desenvolver o front-end de uma página com um banco de dados simuldo. O site que decidimos construir é a simulação de um e-comerce de roupas.
 
+## Link para o deploy
+
+https://denilsonmodas.netlify.app
 ## Available Scripts
 
 In the project directory, you can run:
